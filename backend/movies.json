@@ -1,0 +1,669 @@
+[
+  {
+    "id": 55,
+    "title": "FIFA World Cup Final 2026 🔴 LIVE",
+    "description": "Watch the thrilling conclusion of the 2026 FIFA World Cup, streaming live globally in stunning high definition! Experience every goal, foul, and moment of glory free.",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=World+Cup+LIVE",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=World+Cup+LIVE+Stream",
+    "cast": [
+      "Live Sports",
+      "Global Broadcast"
+    ],
+    "rating": "10.0",
+    "streamUrl": "https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+  },
+  {
+    "id": 1,
+    "title": "Inception",
+    "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+    "cast": [
+      "Leonardo DiCaprio",
+      "Joseph Gordon-Levitt",
+      "Ellen Page"
+    ],
+    "rating": 8.8
+  },
+  {
+    "id": 2,
+    "title": "Interstellar",
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
+    "cast": [
+      "Matthew McConaughey",
+      "Anne Hathaway",
+      "Jessica Chastain"
+    ],
+    "rating": 8.6
+  },
+  {
+    "id": 3,
+    "title": "The Dark Knight",
+    "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/original/nMKdUUepR0i5zn0y1T4CsSB5chy.jpg",
+    "cast": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart"
+    ],
+    "rating": 9
+  },
+  {
+    "id": 4,
+    "title": "Jananam 1947 Pranayam Thudarunnu",
+    "description": "The film is a poignant and heartwarming story centered on two senior citizens, Shivan and Gauri, who find companionship in their twilight years. They decide to leave their old-age home to start a life together, sparking conflict with their children and society.",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMWIyNWM1OGQtNzg4YS00NWU1LTlkMzItMjc2MWE5NTg2ZWZkXkEyXkFqcGc@._V1_.jpg",
+    "backdropUrl": "http://localhost:4000/admin/jananam_backdrop.jpg",
+    "cast": [
+      "Jayaraj Kozhikode",
+      "Leela Samson",
+      "Deepak Parambol",
+      "Anu Sithara"
+    ],
+    "rating": 7.2,
+    "price": 2.99
+  },
+  {
+    "id": 5,
+    "title": "Night of the Living Dead",
+    "description": "Enjoy \"Night of the Living Dead\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Night%20of%20the%20Living%20Dead",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Night%20of%20the%20Living%20Dead+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.3"
+  },
+  {
+    "id": 6,
+    "title": "Charade",
+    "description": "Enjoy \"Charade\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Charade",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Charade+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.0"
+  },
+  {
+    "id": 7,
+    "title": "His Girl Friday",
+    "description": "Enjoy \"His Girl Friday\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=His%20Girl%20Friday",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=His%20Girl%20Friday+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.8"
+  },
+  {
+    "id": 8,
+    "title": "Metropolis",
+    "description": "Enjoy \"Metropolis\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Metropolis",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Metropolis+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.5"
+  },
+  {
+    "id": 9,
+    "title": "Nosferatu",
+    "description": "Enjoy \"Nosferatu\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Nosferatu",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Nosferatu+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.5"
+  },
+  {
+    "id": 10,
+    "title": "The General",
+    "description": "Enjoy \"The General\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20General",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20General+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.7"
+  },
+  {
+    "id": 11,
+    "title": "The Phantom of the Opera",
+    "description": "Enjoy \"The Phantom of the Opera\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Phantom%20of%20the%20Opera",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Phantom%20of%20the%20Opera+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.6"
+  },
+  {
+    "id": 12,
+    "title": "Plan 9 from Outer Space",
+    "description": "Enjoy \"Plan 9 from Outer Space\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Plan%209%20from%20Outer%20Space",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Plan%209%20from%20Outer%20Space+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.8"
+  },
+  {
+    "id": 13,
+    "title": "Carnival of Souls",
+    "description": "Enjoy \"Carnival of Souls\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Carnival%20of%20Souls",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Carnival%20of%20Souls+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.5"
+  },
+  {
+    "id": 14,
+    "title": "House on Haunted Hill",
+    "description": "Enjoy \"House on Haunted Hill\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=House%20on%20Haunted%20Hill",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=House%20on%20Haunted%20Hill+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.5"
+  },
+  {
+    "id": 15,
+    "title": "The Last Man on Earth",
+    "description": "Enjoy \"The Last Man on Earth\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Last%20Man%20on%20Earth",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Last%20Man%20on%20Earth+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.4"
+  },
+  {
+    "id": 16,
+    "title": "Little Shop of Horrors",
+    "description": "Enjoy \"Little Shop of Horrors\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Little%20Shop%20of%20Horrors",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Little%20Shop%20of%20Horrors+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.1"
+  },
+  {
+    "id": 17,
+    "title": "My Man Godfrey",
+    "description": "Enjoy \"My Man Godfrey\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=My%20Man%20Godfrey",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=My%20Man%20Godfrey+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.1"
+  },
+  {
+    "id": 18,
+    "title": "A Star is Born",
+    "description": "Enjoy \"A Star is Born\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=A%20Star%20is%20Born",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=A%20Star%20is%20Born+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.5"
+  },
+  {
+    "id": 19,
+    "title": "Gulliver's Travels",
+    "description": "Enjoy \"Gulliver's Travels\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Gulliver's%20Travels",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Gulliver's%20Travels+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.6"
+  },
+  {
+    "id": 20,
+    "title": "The Fast and the Furious (1954)",
+    "description": "Enjoy \"The Fast and the Furious (1954)\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Fast%20and%20the%20Furious%20(1954)",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Fast%20and%20the%20Furious%20(1954)+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.8"
+  },
+  {
+    "id": 21,
+    "title": "Dementia 13",
+    "description": "Enjoy \"Dementia 13\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Dementia%2013",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Dementia%2013+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.3"
+  },
+  {
+    "id": 22,
+    "title": "Detour",
+    "description": "Enjoy \"Detour\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Detour",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Detour+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.3"
+  },
+  {
+    "id": 23,
+    "title": "D.O.A.",
+    "description": "Enjoy \"D.O.A.\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=D.O.A.",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=D.O.A.+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.9"
+  },
+  {
+    "id": 24,
+    "title": "The Hitch-Hiker",
+    "description": "Enjoy \"The Hitch-Hiker\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Hitch-Hiker",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Hitch-Hiker+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.9"
+  },
+  {
+    "id": 25,
+    "title": "Scarlet Street",
+    "description": "Enjoy \"Scarlet Street\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Scarlet%20Street",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Scarlet%20Street+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.7"
+  },
+  {
+    "id": 26,
+    "title": "The Stranger",
+    "description": "Enjoy \"The Stranger\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Stranger",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Stranger+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.5"
+  },
+  {
+    "id": 27,
+    "title": "Too Late for Tears",
+    "description": "Enjoy \"Too Late for Tears\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Too%20Late%20for%20Tears",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Too%20Late%20for%20Tears+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.0"
+  },
+  {
+    "id": 28,
+    "title": "Big Buck Bunny",
+    "description": "Enjoy \"Big Buck Bunny\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Big%20Buck%20Bunny",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Big%20Buck%20Bunny+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.9"
+  },
+  {
+    "id": 29,
+    "title": "Sintel",
+    "description": "Enjoy \"Sintel\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Sintel",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Sintel+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.8"
+  },
+  {
+    "id": 30,
+    "title": "Tears of Steel",
+    "description": "Enjoy \"Tears of Steel\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Tears%20of%20Steel",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Tears%20of%20Steel+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.6"
+  },
+  {
+    "id": 31,
+    "title": "Elephants Dream",
+    "description": "Enjoy \"Elephants Dream\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Elephants%20Dream",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Elephants%20Dream+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.4"
+  },
+  {
+    "id": 32,
+    "title": "Caminandes",
+    "description": "Enjoy \"Caminandes\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Caminandes",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Caminandes+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.9"
+  },
+  {
+    "id": 33,
+    "title": "Spring",
+    "description": "Enjoy \"Spring\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Spring",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Spring+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.6"
+  },
+  {
+    "id": 34,
+    "title": "Cosmos Laundromat",
+    "description": "Enjoy \"Cosmos Laundromat\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Cosmos%20Laundromat",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Cosmos%20Laundromat+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.1"
+  },
+  {
+    "id": 35,
+    "title": "Agent 327",
+    "description": "Enjoy \"Agent 327\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Agent%20327",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Agent%20327+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.8"
+  },
+  {
+    "id": 36,
+    "title": "Alike",
+    "description": "Enjoy \"Alike\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Alike",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Alike+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.7"
+  },
+  {
+    "id": 37,
+    "title": "Hero's Journey",
+    "description": "Enjoy \"Hero's Journey\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Hero's%20Journey",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Hero's%20Journey+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.8"
+  },
+  {
+    "id": 38,
+    "title": "Glass Half",
+    "description": "Enjoy \"Glass Half\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Glass%20Half",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Glass%20Half+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.8"
+  },
+  {
+    "id": 39,
+    "title": "The Cabinet of Dr. Caligari",
+    "description": "Enjoy \"The Cabinet of Dr. Caligari\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Cabinet%20of%20Dr.%20Caligari",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Cabinet%20of%20Dr.%20Caligari+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.5"
+  },
+  {
+    "id": 40,
+    "title": "Battleship Potemkin",
+    "description": "Enjoy \"Battleship Potemkin\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Battleship%20Potemkin",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Battleship%20Potemkin+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.7"
+  },
+  {
+    "id": 41,
+    "title": "The Gold Rush",
+    "description": "Enjoy \"The Gold Rush\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Gold%20Rush",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Gold%20Rush+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.4"
+  },
+  {
+    "id": 42,
+    "title": "The Kid",
+    "description": "Enjoy \"The Kid\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Kid",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Kid+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.9"
+  },
+  {
+    "id": 43,
+    "title": "City Lights",
+    "description": "Enjoy \"City Lights\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=City%20Lights",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=City%20Lights+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.0"
+  },
+  {
+    "id": 44,
+    "title": "Modern Times",
+    "description": "Enjoy \"Modern Times\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Modern%20Times",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Modern%20Times+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.7"
+  },
+  {
+    "id": 45,
+    "title": "The Great Dictator",
+    "description": "Enjoy \"The Great Dictator\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Great%20Dictator",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Great%20Dictator+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.2"
+  },
+  {
+    "id": 46,
+    "title": "M (1931)",
+    "description": "Enjoy \"M (1931)\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=M%20(1931)",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=M%20(1931)+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.1"
+  },
+  {
+    "id": 47,
+    "title": "The Third Man",
+    "description": "Enjoy \"The Third Man\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Third%20Man",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Third%20Man+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.3"
+  },
+  {
+    "id": 48,
+    "title": "Bicycle Thieves",
+    "description": "Enjoy \"Bicycle Thieves\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Bicycle%20Thieves",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Bicycle%20Thieves+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.4"
+  },
+  {
+    "id": 49,
+    "title": "Seven Samurai",
+    "description": "Enjoy \"Seven Samurai\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Seven%20Samurai",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Seven%20Samurai+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.5"
+  },
+  {
+    "id": 50,
+    "title": "Rashomon",
+    "description": "Enjoy \"Rashomon\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Rashomon",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Rashomon+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.8"
+  },
+  {
+    "id": 51,
+    "title": "A Trip to the Moon",
+    "description": "Enjoy \"A Trip to the Moon\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=A%20Trip%20to%20the%20Moon",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=A%20Trip%20to%20the%20Moon+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.0"
+  },
+  {
+    "id": 52,
+    "title": "The Great Train Robbery",
+    "description": "Enjoy \"The Great Train Robbery\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Great%20Train%20Robbery",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Great%20Train%20Robbery+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "7.3"
+  },
+  {
+    "id": 53,
+    "title": "Steamboat Willie",
+    "description": "Enjoy \"Steamboat Willie\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=Steamboat%20Willie",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=Steamboat%20Willie+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "8.8"
+  },
+  {
+    "id": 54,
+    "title": "The Terror",
+    "description": "Enjoy \"The Terror\", a legendary cinematic masterpiece that is now in the public domain and completely free to stream without exclusivity or licensing restrictions!",
+    "posterUrl": "https://via.placeholder.com/500x750.png?text=The%20Terror",
+    "backdropUrl": "https://via.placeholder.com/1280x720.png?text=The%20Terror+Backdrop",
+    "cast": [
+      "Classic Actors",
+      "Public Domain Stars"
+    ],
+    "rating": "6.6"
+  }
+]

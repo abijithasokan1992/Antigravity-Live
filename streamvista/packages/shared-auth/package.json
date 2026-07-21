@@ -1,0 +1,13 @@
+{
+  "name": "@streamvista/shared-auth",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.41.0",
+    "zod": "^3.22.4",
+    "react": "19.2.4",
+    "next": "16.2.10"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "project-antigravity",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --workspaces",
+    "dev:host": "cd frontend-next && npm run dev -- -p 3000",
+    "build": "npm run build --workspaces",
+    "postdev": "cmd.exe /c start msedge \"http://localhost:3000\""
+  }
+}

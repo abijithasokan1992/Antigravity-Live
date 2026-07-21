@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+  /* HSL Colors - Premium Dark Enterprise (Glassmorphic) */
+  --hue-base: 240;
+  
+  /* Backgrounds */
+  --bg-base: hsl(var(--hue-base), 10%, 6%);
+  --bg-surface: hsla(var(--hue-base), 12%, 10%, 0.7);
+  --bg-surface-hover: hsla(var(--hue-base), 15%, 14%, 0.8);
+  --bg-elevated: hsla(var(--hue-base), 15%, 16%, 0.9);
+  
+  /* Accents */
+  --accent-primary: hsl(230, 85%, 60%);
+  --accent-primary-hover: hsl(230, 85%, 65%);
+  --accent-gradient: linear-gradient(135deg, hsl(230, 85%, 60%), hsl(270, 85%, 60%));
+  
+  /* Text */
+  --text-primary: hsl(var(--hue-base), 10%, 98%);
+  --text-secondary: hsl(var(--hue-base), 10%, 75%);
+  --text-muted: hsl(var(--hue-base), 10%, 55%);
+  
+  /* Status */
+  --status-success: hsl(150, 80%, 45%);
+  --status-warning: hsl(35, 90%, 55%);
+  --status-error: hsl(0, 85%, 55%);
+  --status-info: hsl(210, 90%, 55%);
+
+  /* Borders */
+  --border-light: hsla(var(--hue-base), 20%, 90%, 0.08);
+  --border-medium: hsla(var(--hue-base), 20%, 90%, 0.15);
+  --border-glow: hsla(230, 85%, 60%, 0.3);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Outfit', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  /* Shadows & Glows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 15px var(--border-glow);
+  --glass-blur: blur(12px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(circle at 15% 50%, hsla(230, 40%, 15%, 0.4), transparent 35%),
+    radial-gradient(circle at 85% 30%, hsla(270, 40%, 12%, 0.4), transparent 45%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-primary-hover);
+  text-shadow: 0 0 8px hsla(230, 85%, 65%, 0.4);
+}
+
+/* Utilities */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+/* Glassmorphic Components */
+.glass-panel {
+  background: var(--bg-surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+  border-color: var(--border-medium);
+}
+
+/* Basic Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2) var(--spacing-5);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--accent-gradient);
+  color: #fff;
+  box-shadow: 0 4px 15px hsla(230, 85%, 60%, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px hsla(230, 85%, 60%, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  backdrop-filter: var(--glass-blur);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--border-medium);
+}
+
+/* Inputs */
+.input {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px hsla(230, 85%, 60%, 0.2);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  background: hsla(var(--hue-base), 12%, 12%, 0.8);
+  backdrop-filter: var(--glass-blur);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 1px solid var(--border-light);
+}
+
+td {
+  padding: var(--spacing-4);
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color 0.2s ease;
+}
+
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover td {
+  background-color: hsla(var(--hue-base), 20%, 90%, 0.02);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

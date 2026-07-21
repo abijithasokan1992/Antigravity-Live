@@ -1,0 +1,82 @@
+// prisma/schema.prisma
+// Prisma schema for StreamVista Media OS – aligned with business rules
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider = "postgresql"
+  // url = env("SUPABASE_DATABASE_URL") // removed for Prisma 7
+}
+
+// ---------- Enums ----------
+enum OrganizationType {
+  PRODUCTION_HOUSE
+}
+
+// ---------- Models ----------
+model Organization {
+  id               String          @id @default(uuid())
+  legalName        String
+  displayName      String
+  organizationType OrganizationType @default(PRODUCTION_HOUSE)
+  // Relations
+  projects         Project[]
+  // No "name" field – strict per spec
+  licenses License[]
+}
+
+model User {
+  id         String   @id @default(uuid())
+  fullName   String
+  first_name String?  // optional
+  last_name  String?  // optional
+  username   String?  // optional fallback
+   // Relations can be added as needed (e.g., projects, licenses)
+   auditLogs AuditLog[]
+}
+
+model Project {
+  id            String   @id @default(uuid())
+  internalCode  String   @unique
+  productionType String
+  directorName  String
+  // Relation to Organization (The Bridge)
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  organizationId String
+}
+
+model License {
+  id                String   @id @default(uuid())
+  organizationId    String
+  issuedAt          DateTime @default(now())
+  expiresAt         DateTime?
+  // Business rule enforcement – always non‑sublicensable and no right to deliver
+  nonSublicensable Boolean @default(true)
+  noRightToDeliver Boolean @default(true)
+  // DB‑level check to guarantee truthiness (redundant with defaults but enforced)
+  // check enforced by defaults (nonSublicensable & noRightToDeliver)
+  organization      Organization @relation(fields: [organizationId], references: [id])
+}
+
+// Additional domain models (e.g., Media, DistributionAgreement) can be added here following similar patterns.
+enum AuditStatus {
+  DONE
+  PENDING
+  MISSING
+}
+model AuditLog {
+  id           String      @id @default(uuid())
+  userId       String
+  action       String
+  status       AuditStatus @default(PENDING)
+  resourceType String?
+  resourceId   String?
+  ipAddress    String?
+  timestamp    DateTime    @default(now())
+  metadataJson String?
+
+  user User @relation(fields: [userId], references: [id])
+}

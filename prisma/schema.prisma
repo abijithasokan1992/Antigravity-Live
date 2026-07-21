@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+dataSource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model QcJob {
+  id          String   @id @default(uuid())
+  status      String   // 'QUEUED', 'RUNNING', 'COMPLETED'
+  progress    Int?     // 0-100
+  queuedAt    DateTime @default(now())
+  startedAt   DateTime?
+  completedAt DateTime?
+  assetId     String?  @relation(fields: [assetId], references: [id])
+  asset       MediaAsset?
+  projectId   String?  @relation(fields: [projectId], references: [id])
+  project     Project?
+}
+
+// Existing models (simplified placeholders – replace with your actual definitions)
+model MediaAsset {
+  id   String @id @default(uuid())
+  // ... other fields ...
+}
+
+model Project {
+  id   String @id @default(uuid())
+  // ... other fields ...
+}

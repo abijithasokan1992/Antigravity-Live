@@ -1,0 +1,386 @@
+[
+  {
+    "id": 1,
+    "content_type_id": 1,
+    "codename": "add_logentry",
+    "name": "Can add log entry"
+  },
+  {
+    "id": 2,
+    "content_type_id": 1,
+    "codename": "change_logentry",
+    "name": "Can change log entry"
+  },
+  {
+    "id": 3,
+    "content_type_id": 1,
+    "codename": "delete_logentry",
+    "name": "Can delete log entry"
+  },
+  {
+    "id": 4,
+    "content_type_id": 1,
+    "codename": "view_logentry",
+    "name": "Can view log entry"
+  },
+  {
+    "id": 5,
+    "content_type_id": 2,
+    "codename": "add_permission",
+    "name": "Can add permission"
+  },
+  {
+    "id": 6,
+    "content_type_id": 2,
+    "codename": "change_permission",
+    "name": "Can change permission"
+  },
+  {
+    "id": 7,
+    "content_type_id": 2,
+    "codename": "delete_permission",
+    "name": "Can delete permission"
+  },
+  {
+    "id": 8,
+    "content_type_id": 2,
+    "codename": "view_permission",
+    "name": "Can view permission"
+  },
+  {
+    "id": 9,
+    "content_type_id": 3,
+    "codename": "add_group",
+    "name": "Can add group"
+  },
+  {
+    "id": 10,
+    "content_type_id": 3,
+    "codename": "change_group",
+    "name": "Can change group"
+  },
+  {
+    "id": 11,
+    "content_type_id": 3,
+    "codename": "delete_group",
+    "name": "Can delete group"
+  },
+  {
+    "id": 12,
+    "content_type_id": 3,
+    "codename": "view_group",
+    "name": "Can view group"
+  },
+  {
+    "id": 13,
+    "content_type_id": 4,
+    "codename": "add_contenttype",
+    "name": "Can add content type"
+  },
+  {
+    "id": 14,
+    "content_type_id": 4,
+    "codename": "change_contenttype",
+    "name": "Can change content type"
+  },
+  {
+    "id": 15,
+    "content_type_id": 4,
+    "codename": "delete_contenttype",
+    "name": "Can delete content type"
+  },
+  {
+    "id": 16,
+    "content_type_id": 4,
+    "codename": "view_contenttype",
+    "name": "Can view content type"
+  },
+  {
+    "id": 17,
+    "content_type_id": 5,
+    "codename": "add_session",
+    "name": "Can add session"
+  },
+  {
+    "id": 18,
+    "content_type_id": 5,
+    "codename": "change_session",
+    "name": "Can change session"
+  },
+  {
+    "id": 19,
+    "content_type_id": 5,
+    "codename": "delete_session",
+    "name": "Can delete session"
+  },
+  {
+    "id": 20,
+    "content_type_id": 5,
+    "codename": "view_session",
+    "name": "Can view session"
+  },
+  {
+    "id": 21,
+    "content_type_id": 6,
+    "codename": "add_user",
+    "name": "Can add user"
+  },
+  {
+    "id": 22,
+    "content_type_id": 6,
+    "codename": "change_user",
+    "name": "Can change user"
+  },
+  {
+    "id": 23,
+    "content_type_id": 6,
+    "codename": "delete_user",
+    "name": "Can delete user"
+  },
+  {
+    "id": 24,
+    "content_type_id": 6,
+    "codename": "view_user",
+    "name": "Can view user"
+  },
+  {
+    "id": 25,
+    "content_type_id": 7,
+    "codename": "add_film",
+    "name": "Can add film"
+  },
+  {
+    "id": 26,
+    "content_type_id": 7,
+    "codename": "change_film",
+    "name": "Can change film"
+  },
+  {
+    "id": 27,
+    "content_type_id": 7,
+    "codename": "delete_film",
+    "name": "Can delete film"
+  },
+  {
+    "id": 28,
+    "content_type_id": 7,
+    "codename": "view_film",
+    "name": "Can view film"
+  },
+  {
+    "id": 29,
+    "content_type_id": 8,
+    "codename": "add_genre",
+    "name": "Can add genre"
+  },
+  {
+    "id": 30,
+    "content_type_id": 8,
+    "codename": "change_genre",
+    "name": "Can change genre"
+  },
+  {
+    "id": 31,
+    "content_type_id": 8,
+    "codename": "delete_genre",
+    "name": "Can delete genre"
+  },
+  {
+    "id": 32,
+    "content_type_id": 8,
+    "codename": "view_genre",
+    "name": "Can view genre"
+  },
+  {
+    "id": 33,
+    "content_type_id": 9,
+    "codename": "add_viewhistory",
+    "name": "Can add view history"
+  },
+  {
+    "id": 34,
+    "content_type_id": 9,
+    "codename": "change_viewhistory",
+    "name": "Can change view history"
+  },
+  {
+    "id": 35,
+    "content_type_id": 9,
+    "codename": "delete_viewhistory",
+    "name": "Can delete view history"
+  },
+  {
+    "id": 36,
+    "content_type_id": 9,
+    "codename": "view_viewhistory",
+    "name": "Can view view history"
+  },
+  {
+    "id": 37,
+    "content_type_id": 10,
+    "codename": "add_comment",
+    "name": "Can add comment"
+  },
+  {
+    "id": 38,
+    "content_type_id": 10,
+    "codename": "change_comment",
+    "name": "Can change comment"
+  },
+  {
+    "id": 39,
+    "content_type_id": 10,
+    "codename": "delete_comment",
+    "name": "Can delete comment"
+  },
+  {
+    "id": 40,
+    "content_type_id": 10,
+    "codename": "view_comment",
+    "name": "Can view comment"
+  },
+  {
+    "id": 41,
+    "content_type_id": 11,
+    "codename": "add_rating",
+    "name": "Can add rating"
+  },
+  {
+    "id": 42,
+    "content_type_id": 11,
+    "codename": "change_rating",
+    "name": "Can change rating"
+  },
+  {
+    "id": 43,
+    "content_type_id": 11,
+    "codename": "delete_rating",
+    "name": "Can delete rating"
+  },
+  {
+    "id": 44,
+    "content_type_id": 11,
+    "codename": "view_rating",
+    "name": "Can view rating"
+  },
+  {
+    "id": 45,
+    "content_type_id": 12,
+    "codename": "add_filmdraft",
+    "name": "Can add film draft"
+  },
+  {
+    "id": 46,
+    "content_type_id": 12,
+    "codename": "change_filmdraft",
+    "name": "Can change film draft"
+  },
+  {
+    "id": 47,
+    "content_type_id": 12,
+    "codename": "delete_filmdraft",
+    "name": "Can delete film draft"
+  },
+  {
+    "id": 48,
+    "content_type_id": 12,
+    "codename": "view_filmdraft",
+    "name": "Can view film draft"
+  },
+  {
+    "id": 49,
+    "content_type_id": 13,
+    "codename": "add_filmbuyermapping",
+    "name": "Can add film buyer mapping"
+  },
+  {
+    "id": 50,
+    "content_type_id": 13,
+    "codename": "change_filmbuyermapping",
+    "name": "Can change film buyer mapping"
+  },
+  {
+    "id": 51,
+    "content_type_id": 13,
+    "codename": "delete_filmbuyermapping",
+    "name": "Can delete film buyer mapping"
+  },
+  {
+    "id": 52,
+    "content_type_id": 13,
+    "codename": "view_filmbuyermapping",
+    "name": "Can view film buyer mapping"
+  },
+  {
+    "id": 53,
+    "content_type_id": 14,
+    "codename": "add_multipartupload",
+    "name": "Can add multipart upload"
+  },
+  {
+    "id": 54,
+    "content_type_id": 14,
+    "codename": "change_multipartupload",
+    "name": "Can change multipart upload"
+  },
+  {
+    "id": 55,
+    "content_type_id": 14,
+    "codename": "delete_multipartupload",
+    "name": "Can delete multipart upload"
+  },
+  {
+    "id": 56,
+    "content_type_id": 14,
+    "codename": "view_multipartupload",
+    "name": "Can view multipart upload"
+  },
+  {
+    "id": 57,
+    "content_type_id": 15,
+    "codename": "add_logintoken",
+    "name": "Can add login token"
+  },
+  {
+    "id": 58,
+    "content_type_id": 15,
+    "codename": "change_logintoken",
+    "name": "Can change login token"
+  },
+  {
+    "id": 59,
+    "content_type_id": 15,
+    "codename": "delete_logintoken",
+    "name": "Can delete login token"
+  },
+  {
+    "id": 60,
+    "content_type_id": 15,
+    "codename": "view_logintoken",
+    "name": "Can view login token"
+  },
+  {
+    "id": 61,
+    "content_type_id": 16,
+    "codename": "add_payment",
+    "name": "Can add Payment"
+  },
+  {
+    "id": 62,
+    "content_type_id": 16,
+    "codename": "change_payment",
+    "name": "Can change Payment"
+  },
+  {
+    "id": 63,
+    "content_type_id": 16,
+    "codename": "delete_payment",
+    "name": "Can delete Payment"
+  },
+  {
+    "id": 64,
+    "content_type_id": 16,
+    "codename": "view_payment",
+    "name": "Can view Payment"
+  }
+]

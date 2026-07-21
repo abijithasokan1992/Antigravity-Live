@@ -1,0 +1,36 @@
+:root {
+  --bg: #f4f7f6;
+  --sidebar-bg: #1f2833;
+  --primary: #45a29e;
+  --text: #333;
+  --text-light: #fff;
+  --border: #ddd;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+body { background: var(--bg); color: var(--text); }
+.admin-container { display: flex; min-height: 100vh; }
+.sidebar { width: 250px; background: var(--sidebar-bg); color: var(--text-light); padding: 20px; }
+.sidebar h2 { font-size: 24px; margin-bottom: 40px; }
+.sidebar span { color: var(--primary); }
+.sidebar nav a { display: block; color: #ccc; text-decoration: none; padding: 12px; margin-bottom: 10px; border-radius: 6px; }
+.sidebar nav a:hover, .sidebar nav a.active { background: var(--primary); color: #fff; }
+.content { flex: 1; padding: 40px; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 500; font-size: 14px; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-secondary { background: #ccc; color: #333; }
+.btn-danger { background: #e74c3c; color: #fff; }
+.data-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.data-table th, .data-table td { padding: 15px; text-align: left; border-bottom: 1px solid var(--border); }
+.data-table th { background: #f9f9f9; font-weight: 600; }
+.poster-img { width: 50px; border-radius: 4px; }
+
+/* Modal */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; }
+.modal.hidden { display: none; }
+.modal-content { background: #fff; padding: 30px; border-radius: 8px; width: 500px; max-width: 90%; }
+.modal h2 { margin-bottom: 20px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 500; }
+.form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-family: 'Outfit'; }
+.form-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
