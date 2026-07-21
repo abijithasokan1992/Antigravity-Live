@@ -1,0 +1,91 @@
+# ============================================================
+# CRAYONS PICTURES — RENDER.COM DEPLOYMENT CONFIG
+# Owner: Abijith Asokan | StreamVista OPC Pvt Ltd
+# App Designer, Builder, Developer & Ecosystem Architect
+# Film Maker
+# Cost: $0.00/month (Free tier)
+# ============================================================
+
+services:
+  - type: web
+    name: crayons-pictures-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    region: singapore  # Closest to India
+
+    # Auto-deploy when pushed to GitHub
+    autoDeploy: true
+    branch: main
+
+    # Health check endpoint
+    healthCheckPath: /health
+
+    # Environment variables (set these in Render dashboard)
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_NAME
+        value: Crayons Pictures API
+
+      # DATABASE — Paste Supabase connection string
+      - key: DATABASE_URL
+        sync: false  # Set manually in Render dashboard
+
+      # SUPABASE
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+
+      # SECRET KEY — Generate a strong random string
+      - key: SECRET_KEY
+        generateValue: true
+
+      # CLOUDFLARE R2
+      - key: R2_ACCOUNT_ID
+        sync: false
+      - key: R2_ACCESS_KEY_ID
+        sync: false
+      - key: R2_SECRET_ACCESS_KEY
+        sync: false
+      - key: R2_BUCKET_NAME
+        value: crayons-vault
+      - key: R2_ENDPOINT_URL
+        sync: false
+
+      # EMAIL (Resend)
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        value: noreply@crayonspictures.com
+
+      # SMS (MSG91)
+      - key: MSG91_AUTH_KEY
+        sync: false
+      - key: MSG91_SENDER_ID
+        value: CRAYON
+
+      # WHATSAPP (Meta Cloud API)
+      - key: WHATSAPP_TOKEN
+        sync: false
+      - key: WHATSAPP_PHONE_ID
+        sync: false
+
+      # AI (Gemini)
+      - key: GEMINI_API_KEY
+        sync: false
+
+      # PAYMENTS (Razorpay)
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+
+      # CORS — Your actual domains
+      - key: ALLOWED_ORIGINS
+        value: '["https://streamvista.in","https://crayonspictures.com","https://streamvistacreator.com","https://crayonsloop.com","http://localhost:3000"]'
