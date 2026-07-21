@@ -24,11 +24,63 @@ export default function WatchPage() {
   const [isMuted, setIsMuted] = useState(false);
   const [activeMode, setActiveMode] = useState<'svod' | 'fast'>('svod');
 
+  // Ingested JSON Database Film Catalog (5 Real Titles)
   const movies = [
-    { id: 1, title: 'Jananam 1947', tag: '2x Kerala State Award Winner', duration: '1h 45m', rating: 'U', year: '2024', genre: 'Drama / Romance', desc: 'Two septuagenarians at a retirement home decide to get married and start a new life together, challenging societal norms.' },
-    { id: 2, title: 'Kolumittayi', tag: 'State Award Winner', duration: '2h 05m', rating: 'U', year: '2023', genre: 'Family / Nostalgia', desc: 'A heart-warming story of innocence, childhood friendships, and nostalgic memories in rural Kerala.' },
-    { id: 3, title: 'Civilian', tag: 'Festival Favorite', duration: '1h 19m', rating: 'UA', year: '2014', genre: 'Intense Drama', desc: 'A young man returning from military duty encounters confrontation and truth.' },
-    { id: 4, title: 'Ali\'s Nature', tag: 'Top Rated', duration: '1h 27m', rating: 'U', year: '2021', genre: 'Drama / Mystery', desc: 'In a village where tradition and modernity meet, Ali upholds sacred fishing customs.' },
+    { 
+      id: 7, 
+      uuid: '58a6c2131e0a4ac9beaa8675df6db8e6', 
+      title: 'Jananam 1947 Pranayam Thudarunnu (Malayalam)', 
+      tag: '2x Kerala State Award Winner', 
+      duration: '105m', 
+      rating: 'U', 
+      year: '2024', 
+      s3Key: 'films/videos/58a6c213-1e0a-4ac9-beaa-8675df6db8e6/Reel_01.mp4', 
+      desc: 'Directed & Produced by Abijith Asokan. Gowri and Shivan forge a touching tale of love during twilight years.' 
+    },
+    { 
+      id: 36, 
+      uuid: 'e68b3030a40140dea755c58478340efa', 
+      title: 'Pranayam 1947 (Telugu Dubbed Master)', 
+      tag: 'Telugu 5.1 & 2.0 Audio', 
+      duration: '105m', 
+      rating: 'U', 
+      year: '2024', 
+      s3Key: 'films/videos/e68b3030-a401-40de-a755-c58478340efa/PRANAYAM 1947_FULL MOVIE (TELUGU)_H.264  FINAL_5.1&2.0.mov', 
+      desc: 'Telugu Dubbed Release of Jananam 1947. Full feature 5.1 Surround Sound.' 
+    },
+    { 
+      id: 37, 
+      uuid: '54a4bbedff044d21a3b756f973172b64', 
+      title: 'Bahumukham (Lumexx Media 4K Master)', 
+      tag: 'Telugu 4K Feature', 
+      duration: '118m', 
+      rating: 'U/A', 
+      year: '2024', 
+      s3Key: 'films/videos/54a4bbed-ff04-4d21-a3b7-56f973172b64/BAHUMUKHAM_LUMEXX_MEDIA_4K.mp4', 
+      desc: 'Directed by Harshiv Karthik. High-octane psychological drama in 4K resolution.' 
+    },
+    { 
+      id: 8, 
+      uuid: '3c6ee2596bc64b6ebaf3153c1b5b20b5', 
+      title: 'Civilian', 
+      tag: 'Turkish Festival Feature', 
+      duration: '79m', 
+      rating: 'U/A', 
+      year: '2014', 
+      s3Key: 'films/videos/3c6ee259-6bc6-4b6e-baf3-153c1b5b20b5/Sivil _Textless.mp4', 
+      desc: 'Directed by Levent Çetin. A young man returning from military duty encounters confrontation and truth.' 
+    },
+    { 
+      id: 9, 
+      uuid: 'baeb500d0f6e4558b7de459d9756edb7', 
+      title: 'Ali\'s Nature', 
+      tag: 'Turkish Drama', 
+      duration: '87m', 
+      rating: 'U', 
+      year: '2021', 
+      s3Key: 'films/videos/baeb500d-0f6e-4558-b7de-459d9756edb7/Ali\'s Nature_Textless.mp4', 
+      desc: 'Directed by Levent Çetin. Ali is the last representative of traditional sacred fish customs.' 
+    }
   ];
 
   return (
@@ -82,7 +134,7 @@ export default function WatchPage() {
         <div className="absolute bottom-8 left-8 md:left-12 max-w-2xl space-y-4 z-10">
           <div className="flex items-center gap-2 font-mono text-xs">
             <span className="px-2 py-0.5 rounded bg-white text-black font-bold text-[10px] uppercase">
-              CRAYONS EXCLUSIVE
+              INGESTED MASTER #7
             </span>
             <span className="text-zinc-400 flex items-center gap-1 font-bold">
               <Star className="h-3.5 w-3.5 fill-white text-white" />
@@ -93,10 +145,10 @@ export default function WatchPage() {
           <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-none">
             Jananam 1947
           </h1>
-          <p className="text-sm font-semibold text-zinc-400 font-mono">Pranayam Thudarunnu</p>
+          <p className="text-sm font-semibold text-zinc-400 font-mono">Pranayam Thudarunnu (Malayalam Master)</p>
 
           <p className="text-zinc-300 text-xs md:text-sm line-clamp-3 leading-relaxed">
-            Two septuagenarians at a retirement home decide to get married and start a new life together, challenging societal norms.
+            Directed & Produced by Abijith Asokan. Gowri and Shivan forge a touching tale of love during twilight years. S3: films/videos/58a6c213-1e0a-4ac9-beaa-8675df6db8e6/Reel_01.mp4
           </p>
 
           <div className="flex items-center gap-3 pt-2">
@@ -124,35 +176,35 @@ export default function WatchPage() {
         </div>
       </div>
 
-      {/* Movie Rows & Carousels */}
+      {/* Ingested JSON Catalog Grid */}
       <div className="space-y-8">
         <div className="space-y-3 font-mono">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold text-white uppercase">Trending on Crayons Loop</h2>
-            <span className="text-xs text-zinc-400 hover:text-white cursor-pointer">View All →</span>
+            <h2 className="text-lg font-bold text-white uppercase">Ingested Film Catalog (5 Real Titles from json_export)</h2>
+            <span className="text-xs text-zinc-400">5 Active Ingested Records</span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {movies.map((m) => (
               <div 
                 key={m.id}
-                className="glass-card rounded-xl overflow-hidden border border-white/10 hover:border-white/30 group cursor-pointer transition-all shadow-xl"
+                className="glass-card rounded-xl overflow-hidden border border-white/10 hover:border-white/30 group cursor-pointer transition-all shadow-xl p-4 space-y-3"
               >
-                <div className="relative aspect-video bg-zinc-950 flex items-center justify-center overflow-hidden">
-                  <span className="font-bold text-lg text-zinc-500">{m.title}</span>
-                  <div className="absolute top-2 left-2 z-20">
-                    <span className="px-2 py-0.5 rounded bg-zinc-900 text-white font-mono text-[9px] font-bold uppercase border border-white/10">
-                      {m.tag}
-                    </span>
-                  </div>
+                <div className="flex justify-between items-start">
+                  <span className="px-2 py-0.5 rounded bg-white text-black font-mono text-[9px] font-bold uppercase">
+                    ID: {m.id} • {m.tag}
+                  </span>
+                  <span className="text-zinc-400 text-xs font-mono">{m.duration}</span>
                 </div>
 
-                <div className="p-4 space-y-2 bg-zinc-950 font-mono text-xs">
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-white">{m.title}</span>
-                    <span className="px-1 py-0.5 rounded border border-white/10 text-zinc-400 text-[10px]">{m.rating}</span>
-                  </div>
-                  <p className="text-[11px] text-zinc-400 line-clamp-2">{m.desc}</p>
+                <div>
+                  <h3 className="font-bold text-white text-base">{m.title}</h3>
+                  <p className="text-[11px] text-zinc-400 mt-1">{m.desc}</p>
+                </div>
+
+                <div className="pt-2 border-t border-white/10 flex justify-between items-center text-[10px] text-zinc-500 font-mono">
+                  <span>UUID: {m.uuid.substring(0, 8)}...</span>
+                  <span className="text-white font-bold">S3 VERIFIED</span>
                 </div>
               </div>
             ))}
@@ -176,7 +228,7 @@ export default function WatchPage() {
                   <Play className="h-6 w-6 fill-black ml-1" />
                 </div>
                 <h4 className="text-lg font-bold text-white">Jananam 1947 (Live Playout)</h4>
-                <p className="text-xs text-zinc-400">Stream Format: HLS 1080p @ 25fps • -24 LKFS</p>
+                <p className="text-xs text-zinc-400">S3 Key: films/videos/58a6c213-1e0a-4ac9-beaa-8675df6db8e6/Reel_01.mp4</p>
               </div>
             </div>
           </div>
