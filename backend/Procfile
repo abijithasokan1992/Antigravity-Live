@@ -1,0 +1,5 @@
+# Crayons Pictures — Backend API
+# Owner: Abijith Asokan | StreamVista OPC Pvt Ltd
+# App Designer, Builder, Developer & Ecosystem Architect | Film Maker
+
+web: uvicorn main:app --host 0.0.0.0 --port $PORT
