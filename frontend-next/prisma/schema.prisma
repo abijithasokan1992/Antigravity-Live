@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  role      String   // "ADMIN", "CREATOR", "BUYER"
+  company   String?
+  createdAt DateTime @default(now())
+
+  // Relations
+  films        Film[]           @relation("Owner")
+  messagesSent Message[]        @relation("Sender")
+  deals        FilmBuyerMapping[]
+  ledgers      FinancialLedger[]
+}
+
+model Film {
+  id          String   @id @default(uuid())
+  title       String
+  logline     String?
+  status      String   @default("SUBMITTED")
+  createdAt   DateTime @default(now())
+
+  // Owner of the film
+  ownerId     String
+  owner       User     @relation("Owner", fields: [ownerId], references: [id])
+
+  // Relations
+  mappings    FilmBuyerMapping[]
+  ledgers     FinancialLedger[]
+}
+
+model FilmBuyerMapping {
+  id              String   @id @default(uuid())
+  status          String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  dealStructure   String?  // REVENUE_SHARE, FIXED_FEE
+  createdAt       DateTime @default(now())
+  
+  // Relations
+  filmId          String
+  film            Film     @relation(fields: [filmId], references: [id])
+  buyerId         String
+  buyer           User     @relation(fields: [buyerId], references: [id])
+}
+
+model FinancialLedger {
+  id                 String   @id @default(uuid())
+  dealType           String   @default("REVENUE_SHARE")
+  grossRevenue       Float    @default(0.0)
+  platformDeduction  Float    @default(0.0)
+  netCreatorShare    Float    @default(0.0)
+  status             String   @default("ESTIMATED") // ESTIMATED, RECONCILED, PAYOUT_REQUESTED, PAID
+  createdAt          DateTime @default(now())
+
+  // Relations
+  filmId             String
+  film               Film     @relation(fields: [filmId], references: [id])
+  creatorId          String
+  creator            User     @relation(fields: [creatorId], references: [id])
+}
+
+model Message {
+  id        String   @id @default(uuid())
+  content   String
+  createdAt DateTime @default(now())
+
+  // Relations
+  senderId  String
+  sender    User     @relation("Sender", fields: [senderId], references: [id])
+  threadId  String
+}

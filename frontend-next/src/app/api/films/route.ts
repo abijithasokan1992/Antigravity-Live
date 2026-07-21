@@ -1,0 +1,110 @@
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const realCatalogMetadata = [
+    {
+      id: 7,
+      uuid: "58a6c2131e0a4ac9beaa8675df6db8e6",
+      title: "Jananam 1947 Pranayam Thudarunnu (Malayalam Master)",
+      contentType: "movie",
+      director: "Abijith Asokan",
+      producer: "Abijith Asokan",
+      cast: "Jayaraj Kozhikode (Shivan), Leela Samson (Gowri), Anu Sithara, Deepak Parambol",
+      duration: 105,
+      language: "Malayalam",
+      country: "India",
+      releaseDate: "2024-03-15",
+      censorRating: "U (Universal)",
+      s3Key: "films/videos/58a6c213-1e0a-4ac9-beaa-8675df6db8e6/Reel_01.mp4",
+      poster: "films/posters/e3a205ef6f5f425c9afcb94e556836d5.jpg",
+      trailer: "films/trailers/199f0349a59342b6b1cf05f95f9a1ee2.mp4",
+      budget: 5000000,
+      rightsAvailable: true,
+      distributionTerritories: "Exclusions: India & Australia. Digital SVOD + Hybrid permitted worldwide.",
+      viewsCount: 70,
+      status: "published"
+    },
+    {
+      id: 36,
+      uuid: "e68b3030a40140dea755c58478340efa",
+      title: "Pranayam 1947 (Telugu Dubbed Master 5.1 & 2.0)",
+      contentType: "movie",
+      director: "Abijith Asokan",
+      producer: "Abijith Asokan",
+      cast: "Jayaraj Kozhikode, Leela Samson, Anu Sithara",
+      duration: 105,
+      language: "Telugu",
+      country: "India",
+      releaseDate: "2024-03-15",
+      censorRating: "U (Universal)",
+      s3Key: "films/videos/e68b3030-a401-40de-a755-c58478340efa/PRANAYAM 1947_FULL MOVIE (TELUGU)_H.264  FINAL_5.1&2.0.mov",
+      poster: "films/posters/e3a205ef6f5f425c9afcb94e556836d5.jpg",
+      budget: 5000000,
+      rightsAvailable: true,
+      distributionTerritories: "Worldwide Digital",
+      viewsCount: 142,
+      status: "published"
+    },
+    {
+      id: 37,
+      uuid: "54a4bbedff044d21a3b756f973172b64",
+      title: "Bahumukham (Lumexx Media 4K Master)",
+      contentType: "movie",
+      director: "Harshiv Karthik",
+      producer: "Lumexx Media",
+      duration: 118,
+      language: "Telugu",
+      country: "India",
+      releaseDate: "2024-04-05",
+      censorRating: "U/A",
+      s3Key: "films/videos/54a4bbed-ff04-4d21-a3b7-56f973172b64/BAHUMUKHAM_LUMEXX_MEDIA_4K.mp4",
+      rightsAvailable: true,
+      distributionTerritories: "Worldwide Digital",
+      viewsCount: 95,
+      status: "published"
+    },
+    {
+      id: 8,
+      uuid: "3c6ee2596bc64b6ebaf3153c1b5b20b5",
+      title: "Civilian",
+      contentType: "movie",
+      director: "Levent Çetin",
+      producer: "Levent Çetin, Dilek Aydın",
+      cast: "Umut Sakallıoğlu, Pınar Göktaş",
+      duration: 79,
+      language: "Turkish",
+      country: "Turkey",
+      releaseDate: "2014-04-15",
+      s3Key: "films/videos/3c6ee259-6bc6-4b6e-baf3-153c1b5b20b5/Sivil _Textless.mp4",
+      rightsAvailable: true,
+      distributionTerritories: "Worldwide",
+      viewsCount: 21,
+      status: "published"
+    },
+    {
+      id: 9,
+      uuid: "baeb500d0f6e4558b7de459d9756edb7",
+      title: "Ali's Nature",
+      contentType: "movie",
+      director: "Levent Çetin",
+      producer: "Levent Çetin, Canol Balkaya",
+      cast: "Algı Eke, Ozan Ayhan",
+      duration: 87,
+      language: "Turkish",
+      country: "Turkey",
+      releaseDate: "2021-05-15",
+      s3Key: "films/videos/baeb500d-0f6e-4558-b7de-459d9756edb7/Ali's Nature_Textless.mp4",
+      rightsAvailable: true,
+      distributionTerritories: "Worldwide",
+      viewsCount: 17,
+      status: "published"
+    }
+  ];
+
+  return NextResponse.json({
+    status: 'success',
+    timestamp: new Date().toISOString(),
+    totalTitles: realCatalogMetadata.length,
+    data: realCatalogMetadata
+  });
+}
