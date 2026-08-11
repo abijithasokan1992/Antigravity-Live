@@ -12,13 +12,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#05070d] text-slate-100">
+    <div className="min-h-screen bg-[#05070d] text-slate-100">
       <Navbar />
-      <main className="flex-1 w-full max-w-[1600px] mx-auto p-3 md:p-6 space-y-6">{children}</main>
-      <footer className="sticky bottom-0 z-40 bg-[#070a12]/95 backdrop-blur-xl border-t border-slate-800/80 px-4 py-1.5 text-[11px] font-mono text-slate-400 flex items-center justify-between shadow-2xl">
-        <span>STREAMVISTA INTERNAL WORKSPACE</span>
-        <span className="hidden md:inline">Rights-controlled · Operator-approved</span>
-      </footer>
+      <main className="w-full max-w-[1600px] mx-auto p-3 md:p-6">{children}</main>
     </div>
   );
 }
