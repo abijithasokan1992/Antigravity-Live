@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/muse",
+        permanent: false,
+        missing: [{ type: "query", key: "studio" }],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
