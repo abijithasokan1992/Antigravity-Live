@@ -31,6 +31,10 @@ type DbConfig = {
   serviceKey: string;
 };
 
+type DbResult<T> =
+  | { ok: true; data: T | null }
+  | { ok: false; data: null };
+
 function getDbConfig(): DbConfig | null {
   const url = process.env.SUPABASE_URL?.trim();
   const serviceKey = process.env.SUPABASE_SERVICE_KEY?.trim();
@@ -43,9 +47,9 @@ function getDbConfig(): DbConfig | null {
   return { url: url.replace(/\/$/, ''), serviceKey };
 }
 
-async function postgrest<T>(resource: string, init?: RequestInit): Promise<T | null> {
+async function postgrest<T>(resource: string, init?: RequestInit): Promise<DbResult<T>> {
   const config = getDbConfig();
-  if (!config) return null;
+  if (!config) return { ok: false, data: null };
 
   try {
     const response = await fetch(`${config.url}/rest/v1/${resource}`, {
@@ -59,11 +63,11 @@ async function postgrest<T>(resource: string, init?: RequestInit): Promise<T | n
       },
     });
 
-    if (!response.ok) return null;
-    if (response.status === 204) return null;
-    return (await response.json()) as T;
+    if (!response.ok) return { ok: false, data: null };
+    if (response.status === 204) return { ok: true, data: null };
+    return { ok: true, data: (await response.json()) as T };
   } catch {
-    return null;
+    return { ok: false, data: null };
   }
 }
 
@@ -79,23 +83,28 @@ export async function getServerSession(): Promise<SessionPrincipal | null> {
   const tokenHash = hashSessionToken(token);
   const now = new Date().toISOString();
 
-  const sessions = await postgrest<SessionRow[]>(
+  const sessionResult = await postgrest<SessionRow[]>(
     `auth_session?select=id,party_id,expires_at&token_hash=eq.${encodeURIComponent(tokenHash)}&revoked_at=is.null&expires_at=gt.${encodeURIComponent(now)}&limit=1`,
   );
-  const session = sessions?.[0];
+  if (!sessionResult.ok) return null;
+
+  const session = sessionResult.data?.[0];
   if (!session) return null;
 
-  const parties = await postgrest<PartyRow[]>(
+  const partyResult = await postgrest<PartyRow[]>(
     `party?select=id,email,display_name&id=eq.${encodeURIComponent(session.party_id)}&limit=1`,
   );
-  const party = parties?.[0];
+  if (!partyResult.ok) return null;
+
+  const party = partyResult.data?.[0];
   if (!party) return null;
 
-  const roleRows = await postgrest<PartyRoleRow[]>(
+  const roleResult = await postgrest<PartyRoleRow[]>(
     `party_role?select=role_type&party_id=eq.${encodeURIComponent(session.party_id)}`,
   );
+  if (!roleResult.ok) return null;
 
-  const roles: Role[] = (roleRows ?? [])
+  const roles: Role[] = (roleResult.data ?? [])
     .map((row) => row.role_type)
     .filter(isCanonicalRole);
 
@@ -128,19 +137,17 @@ export async function createSessionRecord(
     }),
   });
 
-  if (!inserted?.[0]) return null;
+  if (!inserted.ok || !inserted.data?.[0]) return null;
   return { token, expiresAt };
 }
 
 export async function revokeSessionRecord(sessionId: string): Promise<boolean> {
   const revokedAt = new Date().toISOString();
-  const result = await postgrest<unknown>(`auth_session?id=eq.${encodeURIComponent(sessionId)}`, {
+  const result = await postgrest<never>(`auth_session?id=eq.${encodeURIComponent(sessionId)}`, {
     method: 'PATCH',
     headers: { Prefer: 'return=minimal' },
     body: JSON.stringify({ revoked_at: revokedAt }),
   });
 
-  // PATCH with Prefer:return=minimal returns 204, which postgrest maps to null.
-  // A configured DB is therefore the only positive signal we can safely use here.
-  return getDbConfig() !== null && result === null;
+  return result.ok;
 }
