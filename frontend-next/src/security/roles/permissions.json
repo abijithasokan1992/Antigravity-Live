@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "roles": {
+    "admin": {
+      "permissions": [
+        "admin:read",
+        "admin:write",
+        "studio:use",
+        "creator:use",
+        "marketplace:read",
+        "deliveries:read",
+        "jobs:create",
+        "jobs:read",
+        "jobs:publish"
+      ]
+    },
+    "studio": {
+      "permissions": [
+        "studio:use",
+        "creator:use",
+        "marketplace:read",
+        "deliveries:read",
+        "jobs:create",
+        "jobs:read",
+        "jobs:publish"
+      ]
+    },
+    "creator": {
+      "permissions": [
+        "studio:use",
+        "creator:use",
+        "marketplace:read",
+        "deliveries:read",
+        "jobs:create",
+        "jobs:read"
+      ]
+    },
+    "buyer": {
+      "permissions": [
+        "marketplace:read",
+        "deliveries:read",
+        "jobs:read"
+      ]
+    }
+  }
+}
