@@ -1,4 +1,5 @@
-import { createHash, randomBytes } from 'node:crypto';
+import { createHash, randomBytes, scrypt as scryptCallback, timingSafeEqual } from 'node:crypto';
+import { promisify } from 'node:util';
 import { cookies } from 'next/headers';
 import {
   isCanonicalRole,
@@ -9,6 +10,7 @@ import {
 
 export const SESSION_COOKIE_NAME = 'sv_session';
 const DEFAULT_SESSION_TTL_SECONDS = 60 * 60 * 8;
+const scrypt = promisify(scryptCallback);
 
 type SessionRow = {
   id: string;
@@ -24,6 +26,11 @@ type PartyRow = {
 
 type PartyRoleRow = {
   role_type: string;
+};
+
+type PasswordIdentityRow = {
+  party_id: string;
+  password_hash: string | null;
 };
 
 type DbConfig = {
@@ -73,6 +80,41 @@ async function postgrest<T>(resource: string, init?: RequestInit): Promise<DbRes
 
 export function hashSessionToken(token: string): string {
   return createHash('sha256').update(token).digest('hex');
+}
+
+async function verifyScryptV1(password: string, encodedHash: string): Promise<boolean> {
+  const parts = encodedHash.split('$');
+  if (parts.length !== 3 || parts[0] !== 'scrypt-v1') return false;
+
+  try {
+    const salt = Buffer.from(parts[1], 'base64url');
+    const expected = Buffer.from(parts[2], 'base64url');
+    if (salt.length < 16 || expected.length < 32) return false;
+
+    const derived = (await scrypt(password, salt, expected.length)) as Buffer;
+    return derived.length === expected.length && timingSafeEqual(derived, expected);
+  } catch {
+    return false;
+  }
+}
+
+export async function verifyPasswordCredentials(
+  email: string,
+  password: string,
+): Promise<string | null> {
+  const normalizedEmail = email.trim().toLowerCase();
+  if (!normalizedEmail || !password) return null;
+
+  const identityResult = await postgrest<PasswordIdentityRow[]>(
+    `auth_identity?select=party_id,password_hash&provider=eq.password&identifier=eq.${encodeURIComponent(normalizedEmail)}&limit=1`,
+  );
+  if (!identityResult.ok) return null;
+
+  const identity = identityResult.data?.[0];
+  if (!identity?.password_hash) return null;
+
+  const valid = await verifyScryptV1(password, identity.password_hash);
+  return valid ? identity.party_id : null;
 }
 
 export async function getServerSession(): Promise<SessionPrincipal | null> {
