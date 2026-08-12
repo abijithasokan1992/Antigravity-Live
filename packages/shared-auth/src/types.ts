@@ -1,32 +1,32 @@
-export enum Role {
-  SUPER_ADMIN = 'SUPER_ADMIN',
-  CREATOR = 'CREATOR',
-  BUYER = 'BUYER',
-  DISTRIBUTOR = 'DISTRIBUTOR',
+import policy from './permissions.json';
+
+export const rolePolicy = policy;
+
+export type Role = keyof typeof rolePolicy.roles;
+export type Permission = (typeof rolePolicy.roles)[Role]['permissions'][number];
+
+export type SessionPrincipal = {
+  partyId: string;
+  email: string;
+  displayName: string;
+  roles: Role[];
+  permissions: Permission[];
+  sessionId: string;
+  expiresAt: string;
+};
+
+export function isCanonicalRole(value: string): value is Role {
+  return Object.prototype.hasOwnProperty.call(rolePolicy.roles, value);
 }
 
-// Define permission scopes per role
-export const permissionMap: Record<Role, string[]> = {
-  [Role.SUPER_ADMIN]: [
-    'manage:all',
-    'view:all',
-    'audit:read',
-    'audit:write',
-  ],
-  [Role.CREATOR]: [
-    'content:create',
-    'content:edit',
-    'content:view',
-    'audit:read',
-  ],
-  [Role.BUYER]: [
-    'content:view',
-    'purchase:execute',
-    'audit:read',
-  ],
-  [Role.DISTRIBUTOR]: [
-    'distribution:manage',
-    'content:view',
-    'audit:read',
-  ],
-};
+export function permissionsForRoles(roles: readonly Role[]): Permission[] {
+  const granted = new Set<Permission>();
+
+  for (const role of roles) {
+    for (const permission of rolePolicy.roles[role].permissions) {
+      granted.add(permission as Permission);
+    }
+  }
+
+  return [...granted];
+}
