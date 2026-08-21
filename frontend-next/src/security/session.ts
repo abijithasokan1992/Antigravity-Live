@@ -1,0 +1,195 @@
+import { createHash, randomBytes, scrypt as scryptCallback, timingSafeEqual } from 'node:crypto';
+import { promisify } from 'node:util';
+import { cookies } from 'next/headers';
+import {
+  isCanonicalRole,
+  permissionsForRoles,
+  type Role,
+  type SessionPrincipal,
+} from '@shared-auth/types';
+
+export const SESSION_COOKIE_NAME = 'sv_session';
+const DEFAULT_SESSION_TTL_SECONDS = 60 * 60 * 8;
+const scrypt = promisify(scryptCallback);
+
+type SessionRow = {
+  id: string;
+  party_id: string;
+  expires_at: string;
+};
+
+type PartyRow = {
+  id: string;
+  email: string;
+  display_name: string;
+};
+
+type PartyRoleRow = {
+  role_type: string;
+};
+
+type PasswordIdentityRow = {
+  party_id: string;
+  password_hash: string | null;
+};
+
+type DbConfig = {
+  url: string;
+  serviceKey: string;
+};
+
+type DbResult<T> =
+  | { ok: true; data: T | null }
+  | { ok: false; data: null };
+
+function getDbConfig(): DbConfig | null {
+  const url = process.env.SUPABASE_URL?.trim();
+  const serviceKey = process.env.SUPABASE_SERVICE_KEY?.trim();
+
+  // Fail closed. Mock or missing credentials must never create an authenticated session.
+  if (!url || !serviceKey || url.includes('mock.supabase.co') || serviceKey === 'mock-key') {
+    return null;
+  }
+
+  return { url: url.replace(/\/$/, ''), serviceKey };
+}
+
+async function postgrest<T>(resource: string, init?: RequestInit): Promise<DbResult<T>> {
+  const config = getDbConfig();
+  if (!config) return { ok: false, data: null };
+
+  try {
+    const response = await fetch(`${config.url}/rest/v1/${resource}`, {
+      ...init,
+      cache: 'no-store',
+      headers: {
+        apikey: config.serviceKey,
+        Authorization: `Bearer ${config.serviceKey}`,
+        'Content-Type': 'application/json',
+        ...init?.headers,
+      },
+    });
+
+    if (!response.ok) return { ok: false, data: null };
+    if (response.status === 204) return { ok: true, data: null };
+    return { ok: true, data: (await response.json()) as T };
+  } catch {
+    return { ok: false, data: null };
+  }
+}
+
+export function hashSessionToken(token: string): string {
+  return createHash('sha256').update(token).digest('hex');
+}
+
+async function verifyScryptV1(password: string, encodedHash: string): Promise<boolean> {
+  const parts = encodedHash.split('$');
+  if (parts.length !== 3 || parts[0] !== 'scrypt-v1') return false;
+
+  try {
+    const salt = Buffer.from(parts[1], 'base64url');
+    const expected = Buffer.from(parts[2], 'base64url');
+    if (salt.length < 16 || expected.length < 32) return false;
+
+    const derived = (await scrypt(password, salt, expected.length)) as Buffer;
+    return derived.length === expected.length && timingSafeEqual(derived, expected);
+  } catch {
+    return false;
+  }
+}
+
+export async function verifyPasswordCredentials(
+  email: string,
+  password: string,
+): Promise<string | null> {
+  const normalizedEmail = email.trim().toLowerCase();
+  if (!normalizedEmail || !password) return null;
+
+  const identityResult = await postgrest<PasswordIdentityRow[]>(
+    `auth_identity?select=party_id,password_hash&provider=eq.password&identifier=eq.${encodeURIComponent(normalizedEmail)}&limit=1`,
+  );
+  if (!identityResult.ok) return null;
+
+  const identity = identityResult.data?.[0];
+  if (!identity?.password_hash) return null;
+
+  const valid = await verifyScryptV1(password, identity.password_hash);
+  return valid ? identity.party_id : null;
+}
+
+export async function getServerSession(): Promise<SessionPrincipal | null> {
+  const cookieStore = await cookies();
+  const token = cookieStore.get(SESSION_COOKIE_NAME)?.value;
+  if (!token) return null;
+
+  const tokenHash = hashSessionToken(token);
+  const now = new Date().toISOString();
+
+  const sessionResult = await postgrest<SessionRow[]>(
+    `auth_session?select=id,party_id,expires_at&token_hash=eq.${encodeURIComponent(tokenHash)}&revoked_at=is.null&expires_at=gt.${encodeURIComponent(now)}&limit=1`,
+  );
+  if (!sessionResult.ok) return null;
+
+  const session = sessionResult.data?.[0];
+  if (!session) return null;
+
+  const partyResult = await postgrest<PartyRow[]>(
+    `party?select=id,email,display_name&id=eq.${encodeURIComponent(session.party_id)}&limit=1`,
+  );
+  if (!partyResult.ok) return null;
+
+  const party = partyResult.data?.[0];
+  if (!party) return null;
+
+  const roleResult = await postgrest<PartyRoleRow[]>(
+    `party_role?select=role_type&party_id=eq.${encodeURIComponent(session.party_id)}`,
+  );
+  if (!roleResult.ok) return null;
+
+  const roles: Role[] = (roleResult.data ?? [])
+    .map((row) => row.role_type)
+    .filter(isCanonicalRole);
+
+  return {
+    partyId: party.id,
+    email: party.email,
+    displayName: party.display_name,
+    roles,
+    permissions: permissionsForRoles(roles),
+    sessionId: session.id,
+    expiresAt: session.expires_at,
+  };
+}
+
+export async function createSessionRecord(
+  partyId: string,
+  ttlSeconds = DEFAULT_SESSION_TTL_SECONDS,
+): Promise<{ token: string; expiresAt: string } | null> {
+  const token = randomBytes(32).toString('base64url');
+  const tokenHash = hashSessionToken(token);
+  const expiresAt = new Date(Date.now() + ttlSeconds * 1000).toISOString();
+
+  const inserted = await postgrest<SessionRow[]>('auth_session', {
+    method: 'POST',
+    headers: { Prefer: 'return=representation' },
+    body: JSON.stringify({
+      party_id: partyId,
+      token_hash: tokenHash,
+      expires_at: expiresAt,
+    }),
+  });
+
+  if (!inserted.ok || !inserted.data?.[0]) return null;
+  return { token, expiresAt };
+}
+
+export async function revokeSessionRecord(sessionId: string): Promise<boolean> {
+  const revokedAt = new Date().toISOString();
+  const result = await postgrest<never>(`auth_session?id=eq.${encodeURIComponent(sessionId)}`, {
+    method: 'PATCH',
+    headers: { Prefer: 'return=minimal' },
+    body: JSON.stringify({ revoked_at: revokedAt }),
+  });
+
+  return result.ok;
+}
